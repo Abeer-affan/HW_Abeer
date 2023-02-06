@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+<h1 font="Times New Roman" size="5"> PLAY STATION 4 </h1> <br>
+
+{%for game in games_data%}
+   <a href = "{{url_for('game_info', game_id=game.id)}}"> <img src=" {{url_for('display_image', filename = game.filename)}}"></a>
+{% endfor %}
+</body>
+</html>

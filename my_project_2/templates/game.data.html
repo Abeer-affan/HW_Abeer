@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My movie</title>
+</head>
+<body>
+<ol>
+  <li>{{game_specific.game_title}}</li>
+    <li>{{game_specific.description}}</li>
+  <li>{{game_specific.age}}</li>
+  <li>{{game_specific.price}}</li>
+    <li>{{game_specific.play_online}}</li>
+
+
+</ol>
+
+<form method="post" action="/add_review">
+    <label>Name</label>
+    <input type="text" name="name" required>
+    <label>Comment</label>
+    <textarea type="text" name="comment_text"></textarea>
+    <input type="hidden" name="game_id" value="{{game_specific.id}}">
+    <button type="submit"> ADD </button>
+</form>
+<ol>
+    {%for comment in comment_specific%}
+    <li>{{comment.name}}</li>
+    <li>{{comment.comment_text}}</li>
+    {%endfor%}
+</ol>
+</body>
+</html>
