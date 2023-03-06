@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Games data management</title>
+</head>
+<body>
+    <a href="/">  HOME   </a><br><br>
+    <form action="/add" method="post" enctype="multipart/form-data">
+        <dl>
+            <p>
+                <label>POSTER UPLOAD</label>
+                <input type="file" name="filename" required>
+            </p>
+        </dl>
+        <label>GAME TITLE</label>
+        <input type="text" name="game_title" required><br><br>
+        <label> DESCRIPTION</label>
+        <textarea name="description" rows="4" cols="50" required></textarea><br><br>
+        <label>Age</label>
+        <input type="text" name="age" required><br><br>
+        <label>  PRICE(NIS) </label>
+        <input type="text" name="price" required><br><br>
+        <label> PLAY ONLINE</label>
+        <input type="text" name="play_online" required><br><br>
+        <button type="submit" >Add</button>
+    </form>
+</body>
+</html>
