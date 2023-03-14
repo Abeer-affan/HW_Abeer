@@ -4,26 +4,91 @@
     <meta charset="UTF-8">
     <title>Games data management</title>
 </head>
-<body>
-    <a href="/">  HOME   </a><br><br>
+<style>
+    .my-button {
+		background-color: #4CAF50; /* Green background */
+		border: none; /* Remove border */
+		color: white; /* White text */
+		padding: 10px 20px; /* Add padding */
+		text-align: center; /* Center text */
+		text-decoration: none; /* Remove underline */
+		display: inline-block; /* Display as inline block */
+		font-size: 16px; /* Font size */
+		border-radius: 5px; /* Add rounded corners */
+		cursor: pointer; /* Add hover effect */
+		transition: background-color 0.3s ease; /* Add transition */
+	}
+
+	/* Add hover effect */
+	.my-button:hover {
+		background-color: #3e8e41;
+	}
+
+
+</style>
+<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"  >
+    <link rel="stylesheet" type="text/css" href="../static/index.css"/>
+
+
+<body >
+  <div class="play station store">
+     <a href="/"><img src="../../static/mylogo12.jpg"></a>
+    </div>
     <form action="/add" method="post" enctype="multipart/form-data">
+       <center>
         <dl>
             <p>
-                <label>POSTER UPLOAD</label>
-                <input type="file" name="filename" required>
+                <h1 color="white">POSTER UPLOAD</h1>
             </p>
         </dl>
-        <label>GAME TITLE</label>
-        <input type="text" name="game_title" required><br><br>
-        <label> DESCRIPTION</label>
+           <h3>
+               <label>FILENAME</label>
+        <input type="file" name="filename" required> <br> <br>
+        <label color="white"> GAME TITLE</label>
+        <input type="text" name="Game_title" required><br><br>
+        <labelcolor="white"> DESCRIPTION</label>
         <textarea name="description" rows="4" cols="50" required></textarea><br><br>
-        <label>Age</label>
+        <label color="white">Age</label>
         <input type="text" name="age" required><br><br>
-        <label>  PRICE(NIS) </label>
+        <label color="white"> PRICE(NIS) </label>
         <input type="text" name="price" required><br><br>
-        <label> PLAY ONLINE</label>
-        <input type="text" name="play_online" required><br><br>
-        <button type="submit" >Add</button>
+         <label color="white"> online_play</label>
+        <input type="text" name="online_play" required><br><br>
+        <label color="white"> multiplayer</label>
+        <input type="text" name="multiplayer" required><br><br>
+        <button  class="my-button" type="submit" > Add </button>
+           </h3>
+</center>
     </form>
+
+<!-- Footer -->
+    <section class="footer">
+        <div class="footer-box">
+            <h2>WORLD OF PS </h2>
+            <div class="social">
+                <a href="/" color="white"><i class='bx bxl-facebook' ></i></a>
+                <a href="/" color="white"><i class='bx bxl-twitter' ></i></a>
+                <a href="/" color="white"><i class='bx bxl-instagram' ></i></a>
+                <a href="/" color="white"><i class='bx bxl-tiktok' ></i></a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <h3 color="white">Support</h3>
+            <li><a href="/" color="white">Product</a></li>
+            <li><a href="/" color="white">Help & Support</a></li>
+            <li><a href="/" color="white">Return policy</a></li>
+            <li><a href="/" color="white">Terms Of use</a></li>
+        </div>
+        <div class="footer-box">
+            <h3 color="white">Contact</h3>
+            <div class="contact">
+                <span><i class='bx bxs-map' color="white"></i>PLAY station online</span><br>
+                <span><i class='bx bxs-phone' color="white"></i>+972-54-8389626</span><br>
+                <span><i class='bx bxs-envelope' color="white"></i>play_station@gmail.com</span><br>
+            </div>
+        </div>
+    </section>
+
+
 </body>
 </html>

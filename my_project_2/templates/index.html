@@ -3,12 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <title>Home page</title>
-</head>
-<body>
-<h1 font="Times New Roman" size="5"> PLAY STATION 4 </h1> <br>
 
-{%for game in games_data%}
-   <a href = "{{url_for('game_info', game_id=game.id)}}"> <img src=" {{url_for('display_image', filename = game.filename)}}"></a>
+</head>
+<style >
+
+	.my-button {
+		background-color: #4CAF50; /* Green background */
+		border: none; /* Remove border */
+		color: white; /* White text */
+		padding: 10px 20px; /* Add padding */
+		text-align: center; /* Center text */
+		text-decoration: none; /* Remove underline */
+		display: inline-block; /* Display as inline block */
+		font-size: 16px; /* Font size */
+		border-radius: 5px; /* Add rounded corners */
+		cursor: pointer; /* Add hover effect */
+		transition: background-color 0.3s ease; /* Add transition */
+	}
+
+	/* Add hover effect */
+	.my-button:hover {
+		background-color: #3e8e41;
+	}
+
+
+ .topnav h1 {
+float: center;
+  color:black;
+  text-align: center;
+  font-family: Times, "Lucida Console", Courier, monospace;
+  font-size: 200%;
+  font-style: oblique 40deg;}
+.topnav {
+  background-color:white;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color:black;
+  text-align: center;
+}
+.topnav img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+
+</style>
+<form method="post">
+  <div >
+    <input type="search" id="mySearch" name="q" />
+    <button>Search</button>
+  </div>
+    </form>
+<style>
+
+      .topnav {
+  background-color:white;
+  overflow: hidden;
+}
+
+.home{
+    width: 100%;
+    min-height: 100vh;
+    background: url("../../static/images/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem,auto));
+    align-items: center;
+    gap: 1.5rem;
+}
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px,auto));
+    gap: 1.5rem;
+}
+.footer-box h2{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.footer-box p{
+    font-size: 0.938rem;
+    margin-bottom: 10px;
+}
+.social{
+    display:flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+.social a .bx{
+    font-size:24px;
+    color: var(--text-color);
+    padding: 10px;
+    background: var(--second-color);
+    border-radius: 0.2rem;
+}
+.social a .bx:hover{
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+.footer-box h3{
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.footer-box li a{
+    color: var(--text-color);
+}.footer-box li a:hover{
+    color: var(--main-color);
+}
+.contact{
+    row-gap: 0.5rem;
+}
+.contact span{
+    display:flex;
+    align-item: center;
+}
+.contact i{
+    font-size: 20px;
+    margin-right: 1rem;
+}
+.copyright{
+   padding: 20px;
+   text-align: center;
+    background: var(--second-color);
+}
+/* Bordered form */
+form {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 20%;
+  border-radius: 15%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"  >
+
+<body style="background-color: #E6E6FA">
+
+     <a href="/"><img src="../../static/mylogo12.jpg"></a>
+<center><h1>  World of PS: Most common games  </h1> </center><br>
+
+      <form action="/login" method="post">
+  <div class="imgcontainer">
+    <img src="../../static/img_avatar2.jpg" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container" >
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <labeL ><b>Password</b></labeL>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+
+{%for game in game_data%}
+   <a href="{{url_for('game_info',game_id=game.id)}}">
+       <img src="{{url_for('display_image',filename=game.filename)}}" width="200" height="250" ></a>
 {% endfor %}
+
+<a  href="/add_data" type="button"> <button class="my-button"> ADD GAME </button> </a>
+
+     <box-icon type='logo' name='facebook'></box-icon>
+
+
+<!-- Footer -->
+    <section class="footer">
+        <div class="footer-box">
+            <h2>WORLD OF PS </h2>
+            <div class="social">
+                <a href="/"><i class='bx bxl-facebook' ></i></a>
+                <a href="/"><i class='bx bxl-twitter' ></i></a>
+                <a href="/"><i class='bx bxl-instagram' ></i></a>
+                <a href="/"><i class='bx bxl-tiktok' ></i></a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <h3>Support</h3>
+            <li><a href="/">Product</a></li>
+            <li><a href="/">Help & Support</a></li>
+            <li><a href="/">Return policy</a></li>
+            <li><a href="/">Terms Of use</a></li>
+        </div>
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <div class="contact">
+                <span><i class='bx bxs-map'></i>PLAY station online</span><br><br>
+                <span><i class='bx bxs-phone'></i>+972-54-8389626</span><br><br>
+                <span><i class='bx bxs-envelope'></i>play_station@gmail.com</span><br>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
