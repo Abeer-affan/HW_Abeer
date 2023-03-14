@@ -1,0 +1,156 @@
+
+.Title{
+  font-family:'Calibri Light';
+  font-weight:1500;
+  display:inline;
+  padding: 180px;
+  margin-top: 500px;
+  margin-bottom: 500px;
+  text-align:right;
+    align-items: right;
+  font-size: 70px;
+  color: white;"
+}
+
+body{
+    background: #E6E6FA;
+  height: 1000px;
+  width:50px
+  background-position: center;
+  background-repeat: no;
+}
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px,auto));
+    gap: 1.5rem;
+    color : black;
+}
+.footer-box h2{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color :black
+}
+.footer-box p{
+    font-size: 0.938rem;
+    margin-bottom: 10px;
+    color : black;
+
+.contact{
+    row-gap: 0.5rem;
+}
+.contact span{
+    display:flex;
+    align-item: center;
+}
+.contact i{
+    font-size: 20px;
+    margin-right: 1rem;
+}
+.copyright{
+   padding: 20px;
+   text-align: center;
+    background: var(--second-color);
+}
+
+
+    .topnav {
+  background-color:white;
+  overflow: hidden;
+}
+
+.home{
+    width: 100%;
+    min-height: 100vh;
+        background: #E6E6FA;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem,auto));
+    align-items: center;
+    gap: 1.5rem;
+}
+.game.data{
+    width: 100%;
+    min-height: 100vh;
+    background: #E6E6FA;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem,auto));
+    align-items: center;
+    gap: 1.5rem;
+}
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px,auto));
+    gap: 1.5rem;
+}
+.footer-box h2{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.footer-box p{
+    font-size: 0.938rem;
+    margin-bottom: 10px;
+}
+.social{
+    display:flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+.social a .bx{
+    font-size:24px;
+    color: var(--text-color);
+    padding: 10px;
+    background: var(--second-color);
+    border-radius: 0.2rem;
+}
+.social a .bx:hover{
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+.footer-box h3{
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.footer-box li a{
+    color: var(--text-color);
+}.footer-box li a:hover{
+    color: var(--main-color);
+}
+.contact{
+    row-gap: 0.5rem;
+}
+.contact span{
+    display:flex;
+    align-item: center;
+}
+.contact i{
+    font-size: 20px;
+    margin-right: 1rem;
+}
+.copyright{
+   padding: 20px;
+   text-align: center;
+    background: var(--second-color);
+     font-size: 30px;
+  color: #99d6ff;
+  }
+.topnav {
+  background-color:white;
+  overflow: hidden;
+}
+
+.rate-area:not(:checked)>
+
+label:before{
+content :"★"
+}
+
+.rate-area > input:checked ~ label {
+	color: gold;
+}

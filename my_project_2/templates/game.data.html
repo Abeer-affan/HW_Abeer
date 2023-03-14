@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Games</title>
+    <link rel="icon" type="image/png" href="../../static/logo12.jpg"/>
+</head>
+<link rel="stylesheet" type="text/css" href="../static/index.css"/>
+<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"  >
+<style>
+
+	.my-button {
+		background-color: #4CAF50; /* Green background */
+		border: none; /* Remove border */
+		color: white; /* White text */
+		padding: 10px 20px; /* Add padding */
+		text-align: center; /* Center text */
+		text-decoration: none; /* Remove underline */
+		display: inline-block; /* Display as inline block */
+		font-size: 16px; /* Font size */
+		border-radius: 5px; /* Add rounded corners */
+		cursor: pointer; /* Add hover effect */
+		transition: background-color 0.3s ease; /* Add transition */
+	}
+
+	/* Add hover effect */
+	.my-button:hover {
+		background-color: #3e8e41;
+	}
+
+
+</style>
+<body>
+     <a href="/"><img src="../../static/mylogo12.jpg"></a>
+     <ol>
+     <center><h1>{{game_specific.Game_title}}</h1>
+         <h3>AGE:{{game_specific.age}}</h3>
+        <h3>PRICE :{{game_specific.price}}</h3>
+        <img src="{{url_for('display_image',filename=game_specific.filename)}}" width="600px" height="400px" border-radius="0.5rem"  text-align="center">
+   <h3>
+     <div style=" width:600px;height:300px; color: black">
+    DESCRIPTION :{{game_specific.description}} </div> </h3><br>
+
+</ol>
+</center>
+<form method="post" action="/add_review">
+<!---->
+    <label>Name</label>
+    <input type="text" name="name" required> <br><br>
+    <label>Comment</label>
+    <input type="text" name="comment_text"></input><br> <br>
+
+    <input type="hidden" name="game_id" value="{{game_specific.id}}">
+
+</form>
+     <button  class="my-button" type="submit"> ADD </button>
+<a href="/delete/{{game_specific.id}}" type="button" ><button class="my-button" type="submit"> Delete </button></a>
+<a href="/Update_game/{{game_specific.id}}" type="button"><button  class="my-button" type="submit"> Update </button></a>
+<ol >
+    {%for comment in comment_specific%}
+    <li>{{comment.name}} : {{comment.comment_text}}</li>
+    {%endfor%}
+</ol>
+
+<!-- Footer -->
+    <section class="footer">
+        <div class="footer-box">
+            <h2>WORLD OF PS </h2>
+            <div class="social">
+                <a href="/"><i class='bx bxl-facebook' ></i></a>
+                <a href="/"><i class='bx bxl-twitter' ></i></a>
+                <a href="/"><i class='bx bxl-instagram' ></i></a>
+                <a href="/"><i class='bx bxl-tiktok' ></i></a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <h3>Support</h3>
+            <li><a href="/">Product</a></li>
+            <li><a href="/">Help & Support</a></li>
+            <li><a href="/">Return policy</a></li>
+            <li><a href="/">Terms Of use</a></li>
+        </div>
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <div class="contact">
+                <span><i class='bx bxs-map'></i>PLAY station online</span><br>
+                <span><i class='bx bxs-phone'></i>+972-54-8389626</span><br>
+                <span><i class='bx bxs-envelope'></i>play_station@gmail.com</span><br>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+</html>
